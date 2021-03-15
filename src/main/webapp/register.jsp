@@ -30,7 +30,6 @@
     Gender<input name="sex" type="radio" >Male
     <input name="sex" type="radio" >Female<br/>
     <table>
-
         <tr>
             <td bgcolor="#faebd7">
                 Date  <input type="text" name="date" ><br/></td></tr>
