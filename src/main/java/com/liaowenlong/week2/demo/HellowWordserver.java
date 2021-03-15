@@ -15,7 +15,7 @@ public class HellowWordserver extends HttpServlet {
     //we need to write hellow in response
     //get writer - java.io
         PrintWriter writer = response.getWriter();        //we went send hellow to cliend
-        writer.println("Hello client!!!!!!");
+        writer.println("Hello client!!!!!");
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response){
         //when client request method is Post - here-inside doPost()
