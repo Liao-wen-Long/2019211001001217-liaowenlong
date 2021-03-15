@@ -12,12 +12,29 @@
 </head>
 <body>
 <form>
-    Username<input type="text" name="username" ><br/>
-    password<input type="password"  name="password" ><br/>
-    Email <input type="text" name="email" ><br/>
+    <table>
+    <tr>
+        <td bgcolor="#faebd7">
+            Username<input type="text" name="username" ><br/></td></tr>
+</table>
+    <table>
+        <tr>
+            <td bgcolor="#faebd7">
+                password<input type="password"  name="password" ><br/></td></tr>
+    </table>
+    <table>
+        <tr>
+            <td bgcolor="#faebd7">
+                Email <input type="text" name="email" ><br/></td></tr>
+    </table>
     Gender<input name="sex" type="radio" >Male
     <input name="sex" type="radio" >Female<br/>
-    Date  <input type="text" name="date" ><br/>
+    <table>
+        <tr>
+            <td bgcolor="#faebd7">
+                Date  <input type="text" name="date" ><br/></td></tr>
+    </table>
+
 
     <input type="submit" value="submit"/>
 </form><!--
