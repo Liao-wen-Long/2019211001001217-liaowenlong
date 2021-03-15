@@ -12,8 +12,9 @@
 </head>
 <body>
 <form>
-    Radio:<input type="text" name="radio"><br/>
-    Password:<input type="text" pe="text" name="password"><br/>
+    Username:<input type="text" name="username"><br/>
+    Password:<input type="text"  name="password"><br/>
+    Email:<input type="text" name="email"><br/>
     <input type="submit" value="submit"/>
 </form><!--
 Task 1:Check request method type when you click write url to call register.jsp
