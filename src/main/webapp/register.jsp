@@ -16,7 +16,7 @@
     password<input type="password"  name="password" ><br/>
     Email <input type="text" name="email" ><br/>
     Gender<input name="sex" type="radio" >Male
-    <input name="sex" type="radio" value="female">Female<br/>
+    <input name="sex" type="radio" >Female<br/>
     Date  <input type="text" name="date" ><br/>
 
     <input type="submit" value="submit"/>
