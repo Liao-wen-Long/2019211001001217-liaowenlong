@@ -12,9 +12,13 @@
 </head>
 <body>
 <form>
-    Username:<input type="text" name="username"><br/>
-    Password:<input type="text"  name="password"><br/>
-    Email:<input type="text" name="email"><br/>
+    Username<input type="text" name="username" ><br/>
+    password<input type="password"  name="password" ><br/>
+    Email <input type="text" name="email" ><br/>
+    Gender<input name="sex" type="radio" >Male
+    <input name="sex" type="radio" value="female">Female<br/>
+    Date  <input type="text" name="date" ><br/>
+
     <input type="submit" value="submit"/>
 </form><!--
 Task 1:Check request method type when you click write url to call register.jsp
