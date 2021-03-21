@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<form method="post" action="/resgister">
     <table>
     <tr>
         <td bgcolor="#faebd7">
@@ -27,8 +27,8 @@
             <td bgcolor="#faebd7">
                 Email <input type="text" name="email" ><br/></td></tr>
     </table>
-    Gender<input name="sex" type="radio" >Male
-    <input name="sex" type="radio" >Female<br/>
+    Gender<input name="sex" type="radio" value="male">Male
+    <input name="sex" type="radio" value="femal">Female<br/>
     <table>
 
         <tr>
