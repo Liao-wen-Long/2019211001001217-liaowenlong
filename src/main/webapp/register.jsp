@@ -42,7 +42,13 @@
 Task 1:Check request method type when you click write url to call register.jsp
 Answer : doGet（）
 
+0.
 
+
+
+
+
+.............0000
 Task 2: Check request method type when you submit register <form>.
 Answer :doPost（）-->
 

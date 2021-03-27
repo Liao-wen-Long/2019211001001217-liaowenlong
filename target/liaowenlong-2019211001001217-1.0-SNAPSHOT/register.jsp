@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<form method="post" action="/resgister">
     <table>
     <tr>
         <td bgcolor="#faebd7">
@@ -27,9 +27,10 @@
             <td bgcolor="#faebd7">
                 Email <input type="text" name="email" ><br/></td></tr>
     </table>
-    Gender<input name="sex" type="radio" >Male
-    <input name="sex" type="radio" >Female<br/>
+    Gender<input name="sex" type="radio" value="male">Male
+    <input name="sex" type="radio" value="femal">Female<br/>
     <table>
+
         <tr>
             <td bgcolor="#faebd7">
                 Date  <input type="text" name="date" ><br/></td></tr>
@@ -41,7 +42,13 @@
 Task 1:Check request method type when you click write url to call register.jsp
 Answer : doGet（）
 
+0.
 
+
+
+
+
+.............0000
 Task 2: Check request method type when you submit register <form>.
 Answer :doPost（）-->
 
