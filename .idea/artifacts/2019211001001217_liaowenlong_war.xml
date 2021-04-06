@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="liaowenlong-2019211001001217-1.0-SNAPSHOT.war">
+    <root id="archive" name="liaowenlong-2019211001001217-sqljdbc4.jre.war">
       <element id="artifact" artifact-name="2019211001001217-liaowenlong:war exploded" />
     </root>
   </artifact>

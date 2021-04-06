@@ -1,84 +1,65 @@
 package com.liaowenlong.week4.dom;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebInitParam;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//use webbaseselvet
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 @WebServlet(
-        urlPatterns = {"jdbc"},
+        urlPatterns = {"/jdbc"},
         initParams = {
-                @WebInitParam(name = "driver",value = "com.microsoft.sqlserver.jdbc.SQLServerDriver"),
-                @WebInitParam(name = "url",value = "jdbc:sqlserver://localhost;databaseName=userdb;"),
-                @WebInitParam(name = "ursename",value = "sa"),
-                @WebInitParam(name = "password",value = "261217"),
-
-
+                @WebInitParam(name="driver",value="com.microsoft.sqlserver.jdbc.SQLServerDriver"),
+                @WebInitParam(name="url",value="jdbc:sqlserver://localhost;databaseName=userlwl;"),
+                @WebInitParam(name="username",value="sa"),
+                @WebInitParam(name="password",value="159357"),
         },loadOnStartup = 1
-
-
 )
-public class JDBCDemoServlet extends HttpServlet {
-    Connection con=null;//class
-    @Override
-    public void init() throws ServletException{
 
-        //String driver="com.microsoft.sqlserver.jdbc.SQL ServerDriver";
-       // String url="jdbc:sqlserver://localhost.databaseName=userdb";
-       // String username="sun";
-       // String password="261217";
+
+public class JDBCDemoServlet extends HttpServlet {
+    Connection con=null;
+    @Override
+    public void init() throws ServletException {
+        // String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        // String url="jdbc:sqlserver://localhost;databaseName=userlwl;";
+        // String username="sa";
+        // String password="159357";
+
         ServletConfig config=getServletConfig();
         String driver=config.getInitParameter("driver");
         String url=config.getInitParameter("url");
         String username=config.getInitParameter("username");
         String password=config.getInitParameter("password");
-
-
-        try {
+        try{
             Class.forName(driver);
-
-            con = DriverManager.getConnection(url,username,password);
-            System.out.println("-->"+con);//ok
-        } catch (ClassNotFoundException | SQLException e) {
+            con= DriverManager.getConnection(url,username,password);
+            System.out.println("init()--> "+con);
+        }catch (ClassNotFoundException | SQLException e){
             e.printStackTrace();
         }
-
-
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-        System.out.println("i am in doGet()");//ok
-        String sql="select * from usertable";
-        try {
-            ResultSet rs=con.createStatement().executeQuery(sql);
-            while(rs.next()){
-                //get from rs - print -
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
     }
     @Override
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("i am in doGet()");//ok
+        System.out.println("i am in doGet()");
         String sql="select * from usertable";
         try {
             ResultSet rs=con.createStatement().executeQuery(sql);
-            while(rs.next()){
-                //get from rs - print -
+            while (rs.next()){
+
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
 
+
+    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
     @Override
     public void destroy() {
         super.destroy();
