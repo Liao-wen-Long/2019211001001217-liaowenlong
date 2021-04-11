@@ -14,31 +14,34 @@
 <form method="post" action="/resgister">
     <table>
     <tr>
-        <td bgcolor="#faebd7">
-            Username<input type="text" name="username" ><br/></td></tr>
-</table>
-    <table>
-        <tr>
-            <td bgcolor="#faebd7">
-                password<input type="password"  name="password" ><br/></td></tr>
-    </table>
-    <table>
-        <tr>
-            <td bgcolor="#faebd7">
-                Email <input type="text" name="email" ><br/></td></tr>
-    </table>
-    Gender<input name="sex" type="radio" value="male">Male
-    <input name="sex" type="radio" value="femal">Female<br/>
-    <table>
+        <td bgcolor="#faeb
+<%@include file="header.jsp" %>
+<html>
+<head>
+    <title>register</title>
+</head>
+<body>
+<form method="post" action="register">
+        <span style="color: #FFA500"> This is my register JSP page</span><br/><br/>
+        <span style="color:#FFA500">Username</span> <input type="text" name="name" required="true" style="background-color: #EAEAAE"><br/><br/>
+        <span style="color: #FFA500">Password</span> <input type="password" name="password" maxlength="8" style="background-color: #EAEAAE"><br/><br/>
+        <span style="color: #FFA500">Email</span><input type="email" name="email" required="true"style="background-color: #EAEAAE"><br/><br/>
+        <span style="color: #FFA500">Gender</span>
+        <label for="1">
+            <input type="radio" name="gender" value="male" id="1"/> <span style="color: #D2B48C">Male</span>
+        </label>
 
-        <tr>
-            <td bgcolor="#faebd7">
-                Date  <input type="text" name="date" ><br/></td></tr>
-    </table>
-
-
-    <input type="submit" value="submit"/>
-</form><!--
+        <label for="2">
+            <input type="radio" name="gender" value="female" id="2"/> <span style="color: #D2B48C">Female</span>
+        </label>
+        <br/><br/>
+        <span style="color: #FFA500">Date of birth(yyyy-mm-dd)</span><input type="date"name="date"  pattern="yyyy-mm-dd" required="true"style="background-color: #EAEAAE"><br/><br/>
+        <input type="submit" value="register"style="background-color: #EAEAAE">
+</form>
+</body>
+</html>
+<%@include file="footer.jsp" %>
+<!--
 Task 1:Check request method type when you click write url to call register.jsp
 Answer : doGet（）
 
