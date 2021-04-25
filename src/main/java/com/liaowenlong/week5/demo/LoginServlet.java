@@ -10,6 +10,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.concurrent.Callable;
+
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
     Connection con = null;
@@ -42,11 +44,29 @@ public class LoginServlet extends HttpServlet {
             User user = userDao.findByUsernamePassword(con, username, password);
             if (user != null) {
 
+                String rememberMe=request.getParameter("rememberMs");
+                if (rememberMe!=null && rememberMe.equals("1")){
+                    Cookie usernameCookie=new Cookie("cUsername", (String) user.getUsername());
+                  Cookie passwordCookie=new Cookie("cPassword",user.getPassword());
+                    Cookie cRememberMeCookie=new Cookie("cRememberMe",rememberMe);
+
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    cRememberMeCookie.setMaxAge(5);
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(cRememberMeCookie);
+
+                }
+
+                HttpSession session=request.getSession();
+                System.out.println("session id-->"+session.getId());
+                session.setMaxInactiveInterval(10);
                 request.setAttribute("user", user);
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
             } else {
                 request.setAttribute("msg", "username or password Error");
-                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
+                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request, response);
             }
 
         } catch (SQLException throwables) {

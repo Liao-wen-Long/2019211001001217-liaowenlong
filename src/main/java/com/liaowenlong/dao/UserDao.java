@@ -37,6 +37,10 @@ public class UserDao implements IUserDao{
 
     @Override
     public int updateUser(Connection con, User user) throws SQLException {
+        //TODO 5.1 -write update sql where id =?
+        //TODO 5.2 -create prepared statement
+        //TODO 5.3 -executeUpdate()
+        //TODO 5.4 return int
         return 0;
     }
 
@@ -47,22 +51,23 @@ public class UserDao implements IUserDao{
 
     @Override
     public User findByUsernamePassword(Connection con, String username, String password) throws SQLException {
-        String sql="select id,username,password,email,gender,birthdate from usertable where username=? and password=?";
-        PreparedStatement st=con.prepareStatement(sql);
-        st.setString(1,username);
-        st.setString(2,password);
-        ResultSet rs= st.executeQuery();
-        User user=null;
-        if(rs.next()){
-            user=new User();
+        String sql = "select id,username,password,email,gender,birthdate from usertable where username=? and password=?";
+        PreparedStatement st = con.prepareStatement(sql);
+        st.setString(1, username);
+        st.setString(2, password);
+        ResultSet rs = st.executeQuery();
+        User user = null;
+        if (rs.next()) {
+            user = new User();
             user.setId(rs.getInt("id"));
             user.setUsername(rs.getString("username"));
             user.setPassword(rs.getString("password"));
             user.setEmail(rs.getString("email"));
             user.setGender(rs.getString("gender"));
             user.setBirthdate(rs.getDate("birthdate"));
-        };
-        return null;
+        }
+
+return user;
     }
 
     @Override
