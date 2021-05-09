@@ -1,5 +1,12 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 86183
+  Date: 2021-04-25
+  Time: 21:14
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<html>
 <head>
     <title>My Online Shop</title>
 </head>
@@ -35,8 +42,15 @@
         Welcome,<font size="18" color="red"> Guest</font>
     </font></td> </tr>
     <tr height="20"><td align="right">
-        <br> <a href="#">Logout</a>
+        <%
+            if (session.getAttribute("user")!=null){
+        %>
+        <br> <a href="logout">Logout</a>
+
+
         <br><a href="#">My Cart</a><br/>
         <a href="register.jsp">Register Here</a>
     </td></tr>
 </table>
+</body>
+</html>

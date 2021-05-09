@@ -1,6 +1,7 @@
 package com.liaowenlon.week3.demo;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,6 +11,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     @Override
@@ -29,6 +31,8 @@ public class RegisterServlet extends HttpServlet {
         writer.println("<br>email"+email);
         writer.println("<br>sex"+sex);
         writer.println("<br>date"+date);
+        //week - 9
+        response.sendRedirect("login");//loginServlet
 
     }
 }
