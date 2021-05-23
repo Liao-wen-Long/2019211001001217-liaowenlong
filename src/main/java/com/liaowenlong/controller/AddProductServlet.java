@@ -27,14 +27,10 @@ public class AddProductServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Category category = new Category();
-        try {
-            List<Category> categoryList = category.findAllCategory(con);
-            request.setAttribute("categoryList",categoryList);
-            String path = "/WEB-INF/views/admin/addProduct.jsp";
-            request.getRequestDispatcher(path).forward(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        List<Category> categoryList = category.findAllCategory(con);
+        request.setAttribute("categoryList",categoryList);
+        String path = "/WEB-INF/views/admin/addProduct.jsp";
+        request.getRequestDispatcher(path).forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
