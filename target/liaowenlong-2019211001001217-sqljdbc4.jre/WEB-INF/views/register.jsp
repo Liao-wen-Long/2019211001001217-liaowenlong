@@ -10,7 +10,7 @@
 <%@include file="header.jsp" %>
 
 
-<form method="post" action="register">
+<form method="post" action="register.jsp"><!--<url-pattern>/register</url-patternn>-->
 
     <span style="color: #FFA500"> This is my register JSP page</span><br/><br/>
     <span style="color:#FFA500">Username</span> <input type="text" name="name" required="true" style="background-color: #EAEAAE"><br/><br/>
