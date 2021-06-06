@@ -13,6 +13,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="2019211001001217-liaowenlong" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jstl:jstl:1.1" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/liaowenlong-2019211001001217-sqljdbc4.jre/META-INF/MANIFEST.MF" />

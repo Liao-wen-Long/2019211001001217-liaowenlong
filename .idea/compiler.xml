@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PengYanlong2019211001001126" />
+        <module name="2019211001001217-liaowenlong" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="2019211001001217-liaowenlong" target="1.8" />
       <module name="PengYanlong2019211001001126" target="11" />
     </bytecodeTargetLevel>
   </component>
